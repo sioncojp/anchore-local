@@ -10,6 +10,7 @@ Create the following container with docker-compose
 
 ## Required
 you need to setting `/etc/hosts` or `https://github.com/cbednarski/hostess`.
+
 Add `anchore-registry.local  127.0.0.1`
 
 ## Help

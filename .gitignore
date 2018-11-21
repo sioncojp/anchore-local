@@ -1,0 +1,6 @@
+config/*
+workspace/*
+db/*
+registry/*
+!config/config.yaml
+!.gitkeep

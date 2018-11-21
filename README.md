@@ -8,12 +8,11 @@ Create the following container with docker-compose
 - anchore-cli server
 - postgres (CVE data)
 
-## required
+## Required
+you need to setting `/etc/hosts` or `https://github.com/cbednarski/hostess`.
+Add `anchore-registry.local  127.0.0.1`
 
-- /etc/hosts or https://github.com/cbednarski/hostess
-- add `anchore-registry.local  127.0.0.1`
-
-## help
+## Help
 
 ```shell
 $ make help
@@ -84,7 +83,9 @@ $ make down
 $ make clean
 ```
 
-## etc
+## Other
 
-- docker compose file from https://raw.githubusercontent.com/anchore/anchore-engine/master/scripts/docker-compose/docker-compose.yaml
-- docker config file based from https://raw.githubusercontent.com/anchore/anchore-engine/master/scripts/docker-compose/config.yaml
+- docker compose file from 
+	- https://raw.githubusercontent.com/anchore/anchore-engine/master/scripts/docker-compose/docker-compose.yaml
+- docker config file based from
+	- https://raw.githubusercontent.com/anchore/anchore-engine/master/scripts/docker-compose/config.yaml

@@ -1,6 +1,7 @@
+idea/
 config/*
 workspace/*
-db/*
+db/
 registry/*
 !config/config.yaml
 !.gitkeep

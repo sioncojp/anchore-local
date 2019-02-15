@@ -10,6 +10,7 @@ NC        := \033[0m
 DOCKER_COMPOSE := docker-compose exec anchore-engine anchore-cli --u admin --p foobar
 
 up: ## docker up
+	-@mkdir db
 	@docker-compose pull
 	@docker-compose up -d
 	@echo "$(CYAN)add local docker registry...$(NC)"
@@ -39,7 +40,7 @@ push: require/image## push image to local registry
 	docker push anchore-registry.local/$(IMAGE)
 
 down: ## docker down
-	@docker-compose down
+	@docker-compose down --volumes
 	@rm -rf registry/docker
 
 clean: down ## clean all

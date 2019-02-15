@@ -80,12 +80,14 @@ services:
      - ANCHORE_ENDPOINT_HOSTNAME=anchore-engine
      - GODEBUG=netdns=go
   anchore-db:
-    image: "postgres:9"
+    image: "postgres:latest"
     volumes:
-     - ./db:/var/lib/postgresql/data/pgdata/db-files/:z
+     - ./postgresql.conf:/etc/postgresql/postgresql.conf
+     - ./db:/var/lib/postgresql/data/db-files/:z
     environment:
       - POSTGRES_PASSWORD=mysecretpassword
-      - PGDATA=/tmp
+      - PGDATA=/var/lib/postgresql/data/db-files
+    command: -c config_file=/etc/postgresql/postgresql.conf
     logging:
      driver: "json-file"
      options:
